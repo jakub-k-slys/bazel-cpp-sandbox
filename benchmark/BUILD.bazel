@@ -1,0 +1,11 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+
+cc_test(
+    name = "benchmark",
+    srcs = ["benchmark_test.cc"],
+    copts = ["-Iexternal/benchmark/include"],
+    deps = [
+        "//lib:lib",
+        "@benchmark//:benchmark_main",
+    ],
+)

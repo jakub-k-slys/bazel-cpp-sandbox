@@ -1,0 +1,15 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "lib",
+    hdrs = glob(["**/*.h"]),
+    srcs = glob(["**/*.cc"]),
+    visibility = [
+        "//main:__pkg__",
+        "//test:__pkg__",
+        "//benchmark:__pkg__"
+    ],
+    copts = [
+        "-std=c++20",
+    ],
+)

@@ -1,0 +1,9 @@
+cc_test(
+    name = "test",
+    srcs = ["word_generator_test.cc"],
+    copts = ["-Iexternal/gtest/include"],
+    deps = [
+        "//lib:lib",
+        "@gtest//:gtest_main",
+    ],
+)
